@@ -29,7 +29,8 @@ while not close:
     main_menu_selection = int(input("1 - 7 : "))
     system("cls")
 
-# 1. Add Text =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
+
+# 1. Add Text =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
 
     
     while main_menu_selection == 1:
@@ -159,7 +160,9 @@ while not close:
         except ValueError:
             print("ERROR: Invalid input\nPlease try again!\n")
 
-#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#            
+
+# 2. Edit Document =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#       
+
 
     while main_menu_selection == 2:
         for i, x in enumerate(document_list, 1):
@@ -183,6 +186,9 @@ while not close:
                 document_list.remove[edit_element-1]
                 main_menu_selection = 0
 
+            if delete_move == 2:
+                document_list.remove[edit_element-1]
+                main_menu_selection = 0
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
         
@@ -194,7 +200,8 @@ while not close:
     while main_menu_selection == 4:
         main_menu_selection = input("Type 0 to return")
 
-#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
+# Preview =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
+
                 
     while main_menu_selection == 5:
         print("Preview:\n" + "\n\t-=-=-=-\n".join(document_list) + "\n")
