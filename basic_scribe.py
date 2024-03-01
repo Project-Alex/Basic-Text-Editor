@@ -194,9 +194,8 @@ while not close:
         
         print("File successfully created!\n\n")
 
-        return_to_main_menu = input("Please enter anything to return to main menu when ready.")
+        print_back = input("Please type 0 ")
         system("cls")
-        main_menu_selection = 0
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
 
