@@ -10,6 +10,7 @@ brkline = "=-"*13 + "=\n"
 
 close = False
 while not close:
+
     # Main Menu
     print(f"{brkline}"
           "Welcome to Basic Scribe\n"
@@ -28,9 +29,9 @@ while not close:
     main_menu_selection = int(input("1 - 7 : "))
     system("cls")
 
-#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
+# 1. Add Text =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
+
     
-    # Menu 1.0: Add text
     while main_menu_selection == 1:
         print("Please select an option:\n"
               "1.\tRegular text\n"
@@ -46,7 +47,7 @@ while not close:
               )
         
         try:
-            menu1 = int(input("1 - 10) : (0 to go back: "))
+            menu1 = int(input("[1 - 10] or [0 to go back]: "))
             system('cls')
 
             if menu1 not in range(0, 10):
@@ -161,8 +162,27 @@ while not close:
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#            
 
     while main_menu_selection == 2:
+        for i, x in enumerate(document_list, 1):
+            print(f"{i}. {x}\n\n")
+        
+        edit_element = int(input(f"Please enter the number of the element you wish to move/delete: \n[1 to {len(document_list)}] or [0 to return]:\n"))
+        if edit_element == 0:
+            main_menu_selection = 0
+        else:
+            delete_move = int(input("1. Move entry \n"
+                                    "2. Delete entry \n"
+                                    "[1 or 2] or [0 to return]: "
+                                    ))
+        
+            if delete_move == 1:
+                move_to = int(input("Enter number of element you wish selected element will appear above:\n"
+                                    "(e.g if 1, item will be moved to above 1): "))
+                document_list.insert[move_to, edit_element-1]                
 
-        main_menu_selection = input("Type 0 to return")
+            if delete_move == 2:
+                document_list.remove[edit_element-1]
+                main_menu_selection = 0
+
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
         
@@ -203,4 +223,3 @@ while not close:
         print("Thank you for using Basic Scribe!")
         main_menu_selection = 0
         close = True
-
